@@ -1,0 +1,99 @@
+
+route Uang dan Local
+http://127.0.0.1:8000/api/switch-currency (get)
+http://127.0.0.1:8000/api/switch-locale (get)
+
+route Kategori
+http://127.0.0.1:8000/api/categories (get)
+http://127.0.0.1:8000/api/descendant-categories (get)
+http://127.0.0.1:8000/api/categories/{id} (get)
+http://127.0.0.1:8000/api/attributes/{id} (get)
+
+route AttributeFamily 
+http://127.0.0.1:8000/api/families (get)
+http://127.0.0.1:8000/api/families/{id} (get)
+
+route produk
+http://127.0.0.1:8000/api/products (get)
+http://127.0.0.1:8000/api/products/{id} (get)
+http://127.0.0.1:8000/api/product-additional-information/{id} (get)
+http://127.0.0.1:8000/api/product-configurable-config/{id} (get)
+
+route review produk
+http://127.0.0.1:8000/api/reviews (get)
+http://127.0.0.1:8000/api/reviews/{id} (get)
+http://127.0.0.1:8000/api/reviews/{id}/create (post)
+
+route chanell 
+http://127.0.0.1:8000/api/channels (get)
+http://127.0.0.1:8000/api/channels/{id} (get)
+
+
+route local
+http://127.0.0.1:8000/api/locales (get)
+http://127.0.0.1:8000/api/locales/{id} (get)
+
+route country
+http://127.0.0.1:8000/api/countries (get)
+http://127.0.0.1:8000/api/countries/{id} (get)
+http://127.0.0.1:8000/api/country-states (get)
+
+route slider 
+http://127.0.0.1:8000/api/sliders (get)
+http://127.0.0.1:8000/api/sliders/{id} (get)
+
+route mata uang
+http://127.0.0.1:8000/api/currencies (get)
+http://127.0.0.1:8000/api/currencies/{id} (get)
+
+route config
+http://127.0.0.1:8000/api/config (get)
+
+route customer
+http://127.0.0.1:8000/api/customer/login (post)
+http://127.0.0.1:8000/api/customer/forgot-password (post)
+http://127.0.0.1:8000/api/customer/logout (get)
+http://127.0.0.1:8000/api/customer/get (get)
+http://127.0.0.1:8000/api/customer/profile (put)
+http://127.0.0.1:8000/api/customer/register (post)
+http://127.0.0.1:8000/api/customers/{id} (get)
+
+route alamat
+http://127.0.0.1:8000/api/addresses (get)
+http://127.0.0.1:8000/api/addresses/{id} (get)
+http://127.0.0.1:8000/api/addresses/{id} (delete)
+http://127.0.0.1:8000/api/addresses/{id} (put)
+http://127.0.0.1:8000/api/addresses/create (post)
+
+route orders
+http://127.0.0.1:8000/api/orders (get)
+http://127.0.0.1:8000/api/orders/{id} (get)
+
+route invoice
+http://127.0.0.1:8000/api/invoices (get)
+http://127.0.0.1:8000/api/invoices/{id} (get)
+
+route shipments
+http://127.0.0.1:8000/api/shipments (get)
+http://127.0.0.1:8000/api/shipments/{id} (get)
+
+route whislist
+http://127.0.0.1:8000/api/wishlist (get)
+http://127.0.0.1:8000/api/wishlist/{id} (delete)
+http://127.0.0.1:8000/api/move-to-cart/{id} (get)
+http://127.0.0.1:8000/api/wishlist/add/{id} (get)
+
+route checkout
+http://127.0.0.1:8000/api/checkout (get)
+http://127.0.0.1:8000/api/checkout/cart/add/{id} (post)
+http://127.0.0.1:8000/api/checkout/cart (get)
+http://127.0.0.1:8000/api/checkout/cart/empty (get)
+http://127.0.0.1:8000/api/checkout/cart/update (put)
+http://127.0.0.1:8000/api/checkout/cart/remove-item/{id} (get)
+http://127.0.0.1:8000/api/checkout/cart/coupon (post)
+http://127.0.0.1:8000/api/checkout/cart/coupon (delete)
+http://127.0.0.1:8000/api/checkout/cart/move-to-wishlist/{id} (get)
+http://127.0.0.1:8000/api/checkout/save-address (post)
+http://127.0.0.1:8000/api/checkout/save-shipping (post)
+http://127.0.0.1:8000/api/checkout/save-payment (post)
+http://127.0.0.1:8000/api/checkout/save-order (post)

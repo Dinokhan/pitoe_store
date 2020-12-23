@@ -1,0 +1,71 @@
+ROUTE POST DATA
+
+Route::post('reviews/{id}/create', 'ReviewController@store');
+==> 		'customer_id' => $customer ? $customer->id : null, 
+            'name'        => $customer ? $customer->name : request()->input('name'),
+            'status'      => 'pending',
+            'product_id'  => $id,
+
+Route::post('customer/login', 'SessionController@create');
+==> 		'email'    => 'required|email',
+            'password' => 'required',
+
+Route::post('customer/register', 'CustomerController@create');
+==>			'first_name'    => 'required',
+            'last_name'     => 'required',
+            'email'    => 'required|email',
+            'password' => 'required',
+
+Route::post('addresses/create', 'AddressController@store')->defaults('_config', [
+==>			'company_name' => 'string',
+            'address1'     => 'string|required',
+            'country'      => 'string|required',
+            'state'        => 'string|required',
+            'city'         => 'string|required',
+            'postcode'     => 'required',
+            'phone'        => 'required',
+            'vat_id'       => new VatIdRule(),
+
+Route::post('cart/add/{id}', 'CartController@store');
+==> 		['product_id' => $id, 'cart_id' => cart()->getCart() ?? 0]);
+			(jika dia beli maka data akan berubah menjadi 1)
+
+
+Route::post('cart/coupon', 'CartController@applyCoupon');
+==> 		sementara kita kosongkan dahulu
+
+Route::post('save-address', 'CheckoutController@saveAddress'); //masih pending sementara waktu
+
+Route::post('save-shipping', 'CheckoutController@saveShipping'); //masih pending sementara waktu
+
+Route::post('save-payment', 'CheckoutController@savePayment'); //masih pending sementara waktu
+
+Route::post('save-order', 'CheckoutController@saveOrder'); //masih pending sementara waktu
+
+
+ROUTE PUT DATA (UPDATE DATA)
+Route::put('customer/profile', 'SessionController@update');
+==>			'first_name'    => 'required',
+            'last_name'     => 'required',
+            'gender'        => 'required',
+            'date_of_birth' => 'nullable|date|before:today',
+            'email'         => 'email|unique:customers,email,' . $customer->id,
+            'password'      => 'confirmed|min:6',
+
+Route::put('addresses/{id}', 'AddressController@update')->defaults('_config', [
+            'authorization_required' => true
+        ]);
+==>			'company_name' => 'string',
+            'address1'     => 'string|required',
+            'country'      => 'string|required',
+            'state'        => 'string|required',
+            'city'         => 'string|required',
+            'postcode'     => 'required',
+            'phone'        => 'required',
+            'vat_id'       => new VatIdRule(),
+
+Route::put('cart/update', 'CartController@update');
+==>			['product_id' => $id, 'cart_id' => cart()->getCart() ?? 0]);
+			(jika dia beli maka data akan berubah menjadi 1)
+
+
